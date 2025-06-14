@@ -1,0 +1,118 @@
+    :root {
+      --light-bg: #f9f9f9;
+      --light-text: #1a1a1a;
+      --dark-bg: #1a1a1a;
+      --dark-text: #f9f9f9;
+      --primary-color: #4e9af1;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    body.dark {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    .clock-container {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1000px;
+      opacity: 0;
+      animation: forwards lua 1s;
+      transition: all 0.5s ease;
+    }
+
+    .clock-container:hover {
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      transform: translateY(-10px);
+    }
+
+    @keyframes lua {
+      from {
+
+      }
+      to {
+        opacity: 1;
+        margin-bottom: 0;
+       
+      }
+        
+    }
+
+    .time {
+      font-size: 4rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ampm {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      opacity: 1;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .ampm.hide {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    .date {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .controls {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: var(--primary-color);
+      color: white;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #2e79c1;
+    }
+
+    @media (max-width: 600px) {
+      .time {
+        font-size: 2.5rem;
+      }
+
+      .date {
+        font-size: 1.1rem;
+      }
+
+      .ampm {
+        font-size: 1rem;
+      }
+    }
